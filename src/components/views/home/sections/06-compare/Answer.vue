@@ -72,7 +72,7 @@ export default {
         return this.$t(`theses.${this.thesis.index}.positions.${this.party.alias}.explanation`, this.$store.getters['languages/fallback'].code);
       }
       const explanation = this.$t(`theses.${this.thesis.index}.positions.${this.party.alias}.explanation`).trim();
-      if (explanation === '') {
+      if (explanation === '' || explanation === '-') {
         return this.$t('views.home.compare.answer.empty.content', { party: this.$t(`parties.${this.party.index}.name`) });
       }
       return explanation;

@@ -107,3 +107,12 @@ button:focus, input:focus {
 .tooltip * {
 	outline: none !important;
 }
+
+.base-button.base-button--theme-primary-dark{
+  background-color: $theme-primary-dark-background;
+  border: 1px solid $theme-primary-dark-border;
+}
+
+.main-navigation__group-toggle, .main-navigation__menu {
+  background-color: #ccc !important;
+}

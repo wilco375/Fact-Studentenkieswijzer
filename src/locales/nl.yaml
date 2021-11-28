@@ -73,11 +73,11 @@ elements:
       disconnected: "Verbinding verbroken"
   guide-button:
     start: "Start"
-    introduction: "Leer hoe dit werkt"
+    introduction: "Naar de introductie"
     first-thesis: "Start met de eerste stelling"
     thesis: "Ga door naar de volgende stelling"
     party: "Selecteer de partijen"
-    match: "Zie je resultaten"
+    match: "Bekijk je resultaten"
     compare: "Lees de toelichtingen"
   kiosk-mode:
     heading: "Wil je opnieuw beginnen?"

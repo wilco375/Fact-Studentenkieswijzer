@@ -9,7 +9,7 @@
   >
     <!-- wrapping div needed for IE11 -->
     <div class="start-section__logo">
-      <OpenElectionCompassLogo width="1em" />
+      <img width="300px" src="/logo.svg" alt="Fact logo">
     </div>
     <h1 class="start-section__heading">
       {{ $t('title') }}
@@ -19,13 +19,11 @@
 </template>
 
 <script>
-import OpenElectionCompassLogo from '@/components/elements/OpenElectionCompassLogo.vue';
 import PageSection from '@/components/elements/PageSection.vue';
 
 export default {
   name: 'StartSection',
   components: {
-    OpenElectionCompassLogo,
     PageSection,
   },
 };
@@ -50,16 +48,13 @@ export default {
   font-size: 1.5em;
   line-height: 1.25;
   text-align: center;
-  max-width: 56em;
-  margin: 2em auto 1em;
+  max-width: 15em;
+  margin: 1.5em auto 1em;
   @media (min-width: 38em) {
     font-size: 2em;
   }
   @media (min-width: 48em) {
     font-size: 3em;
-  }
-  @media (min-width: 64em) {
-    font-size: 4em;
   }
 }
 
