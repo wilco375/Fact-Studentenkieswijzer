@@ -13,8 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+
     - name: Build
-      run: npm ci && npm run build:demo
+      run: npm install && npm run build:demo
 
     - name: Deploy Demos to GitHub Pages
       if: success()
