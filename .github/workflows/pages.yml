@@ -26,4 +26,4 @@ jobs:
       with:
         build_dir: dist/demo
       env:
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
