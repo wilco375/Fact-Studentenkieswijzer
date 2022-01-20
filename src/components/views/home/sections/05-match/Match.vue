@@ -84,7 +84,7 @@ export default {
 
 .match__party-description {
   margin-bottom: 2.5em;
-  color: #744210;
+  color: #000;
   font-size: 0.875em;
   @media (min-width: 40em) {
     font-size: 1em;
