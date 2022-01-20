@@ -2,9 +2,9 @@ name: Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ fact ]
   pull_request:
-    branches: [ master ]
+    branches: [ fact ]
 
 jobs:
   build-and-deploy:
