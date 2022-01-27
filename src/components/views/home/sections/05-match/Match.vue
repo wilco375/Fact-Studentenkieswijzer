@@ -18,7 +18,8 @@
     </div>
     <p class="match__party-description" v-if="$t(`parties.${party.index}.description`) !== ''
     && $t(`parties.${party.index}.description`) !== '-'">
-      <ShowMore :length="500" :text="$t(`parties.${party.index}.description`)" />
+      <ShowMore :length="500" :text="$t(`parties.${party.index}.description`)"
+                :escape-html="false" />
     </p>
   </div>
 </template>

@@ -184,11 +184,13 @@ export default {
       if (!this.activeSection) {
         return;
       }
+      console.log('Going to active section', this.activeSection);
       this.goToSection(this.activeSection.alias);
     },
     goToSection(alias) {
       // Find dom node of section
       const sectionElement = this.$el.querySelector(`[data-section="${alias}"]`);
+      console.log('Scrolling to section', sectionElement, alias);
       window.scrollTo({
         behavior: 'smooth', // using iamdustan/smoothscroll polyfill
         left: 0,

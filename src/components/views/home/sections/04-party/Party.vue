@@ -95,8 +95,8 @@ export default {
 }
 
 .party--selected .party__button {
-  border: 1px solid var(--theme-primary-border);
-  background-color: var(--theme-primary-background);
+  border: 1px solid #718096;
+  background-color: #A0AEC0;
   color: var(--theme-primary-text);
 }
 
@@ -107,24 +107,10 @@ export default {
 }
 
 .party__logo {
-  flex: none;
-  order: 2;
   img {
-    width: 4em;
-    height: 4em;
-  }
-  @media (min-width: 40em) {
-    img {
-      width: 5em;
-      height: 5em;
-    }
-  }
-  @media (min-width: 48em) {
-    width: 100%;
-    img {
-      width: 100%;
-      height: 100%;
-    }
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
   }
 }
 
@@ -162,10 +148,8 @@ export default {
   .party__button {
     display: flex;
     align-items: center;
-    @media (min-width: 48em) {
-      flex-direction: column;
-      height: 100%;
-    }
+    flex-direction: row-reverse;
+    padding: 0.5em 1em;
   }
 
   .party__caption {
@@ -175,11 +159,6 @@ export default {
     text-align: left;
     order: 1;
     width: 100%;
-    @media (min-width: 48em) {
-      align-items: flex-start;
-      order: 2;
-      margin-top: 1em;
-    }
   }
 
   .party__details {

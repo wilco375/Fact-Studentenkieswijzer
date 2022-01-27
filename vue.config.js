@@ -5,15 +5,10 @@ module.exports = {
       template: 'public/index.html',
       filename: 'index.html',
     },
-    'demo-hybrid': {
+    en: {
       entry: 'src/main.js',
-      template: 'public/demo-hybrid.html',
-      filename: 'demo-hybrid.html',
-    },
-    'demo-luedenscheid': {
-      entry: 'src/main.js',
-      template: 'public/demo-luedenscheid.html',
-      filename: 'demo-luedenscheid.html',
+      template: 'public/en.html',
+      filename: 'en.html',
     },
   },
 

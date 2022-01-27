@@ -17,7 +17,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/cu.png"
     },
     "dpe": {
         "alias": "dpe",
@@ -33,7 +33,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/dpe.png"
     },
     "pvv": {
         "alias": "pvv",
@@ -49,7 +49,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/pvv.png"
     },
     "volt": {
         "alias": "volt",
@@ -65,7 +65,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/volt.svg"
     },
     "ve": {
         "alias": "ve",
@@ -81,7 +81,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/ve.jpg"
     },
     "bbe": {
         "alias": "bbe",
@@ -97,13 +97,13 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/bbe.png"
     },
     "pvda": {
         "alias": "pvda",
         "name": {
-            "nl": "PvdA",
-            "en": "PvdA"
+            "nl": "Partij van de Arbeid",
+            "en": "Partij van de Arbeid (Labor Party)"
         },
         "short": {
             "nl": "PvdA",
@@ -113,7 +113,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/pvda.png"
     },
     "gl": {
         "alias": "gl",
@@ -129,7 +129,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/gl.png"
     },
     "d66": {
         "alias": "d66",
@@ -145,7 +145,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/d66.png"
     },
     "pvdd": {
         "alias": "pvdd",
@@ -161,7 +161,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/pvdd.png"
     },
     "link": {
         "alias": "link",
@@ -177,7 +177,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/link.png"
     },
     "sp": {
         "alias": "sp",
@@ -193,7 +193,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/sp.png"
     },
     "cda": {
         "alias": "cda",
@@ -209,7 +209,7 @@ parties = {
             "nl": "",
             "en": ""
         },
-        "logo": None
+        "logo": "/parties/cda.png"
     },
     "vvd": {
         "alias": "vvd",
@@ -220,6 +220,22 @@ parties = {
         "short": {
             "nl": "VVD",
             "en": "VVD"
+        },
+        "description": {
+            "nl": "",
+            "en": ""
+        },
+        "logo": "/parties/vvd.png"
+    },
+    "jtw": {
+        "alias": "jtw",
+        "name": {
+            "nl": "Jan ten Wolde (blanko lijst)",
+            "en": "Jan ten Wolde (blank list)"
+        },
+        "short": {
+            "nl": "JtW",
+            "en": "JtW"
         },
         "description": {
             "nl": "",
@@ -243,7 +259,7 @@ result = {
         }
     ],
     "title": {
-        "nl": "Studentenkieswijzer Gemeenteverkiezingen Enschede",
+        "nl": "Studentenkieswijzer Gemeenteraadsverkiezingen Enschede",
         "en": "Student Election Guide Municipal Elections Enschede"
     },
     "subtitle": {
@@ -256,8 +272,8 @@ result = {
             "en": "Welcome to the student election guide"
         },
         "text": {
-            "nl": "In deze kieswijzer kom je te weten welke gemeentepartij het beste jouw belangen vertegenwoordigt als student.",
-            "en": "In this election guide you will find out which municipal party best represents your interests as a student."
+            "nl": "Deze kieswijzer is speciaal gericht op studenten en bevat stellingen die specifiek voor studenten relevant zijn. Wij raden sterk aan om ook de toelichtingen van partijen bij de stellingen te lezen en om naast deze kieswijzer ook een algemene kieswijzer in te vullen en partijprogramma's door te lezen.",
+            "en": "This election guide is aimed at students and contains theses that are specifically relevant to students. We strongly recommend that you also read the explanations of the parties to the theses and that, in addition to this election guide, you also complete a general election guide and read through party programmes."
         }
     },
     "parties": [],
@@ -433,8 +449,14 @@ df.sort_values(by=["Partijnaam"], inplace=True)
 for row_index in range(1, df.shape[0]):
     row = df.iloc[row_index]
     party_id = row[1].lower()
-    parties[party_id]["description"]["nl"] = row[2]
-    parties[party_id]["description"]["en"] = row[3]
+    if row[2] is None or row[2].strip() == "":
+        parties[party_id]["description"]["nl"] = 'Niet opgegeven'
+    else:
+        parties[party_id]["description"]["nl"] = row[2]
+    if row[3] is None or row[3].strip() == "":
+        parties[party_id]["description"]["en"] = 'Not provided'
+    else:
+        parties[party_id]["description"]["en"] = row[3]
     for i in range(0, len(result["theses"])):
         position = row[i * 3 + 4]
         if position is not None:
@@ -460,15 +482,24 @@ for row_index in range(1, df.shape[0]):
         }
     result["parties"].append(parties[party_id])
 
-with open('public/index.html', 'r') as f:
-    contents = f.read()
+for lang_code in ['nl', 'en']:
+    filename = 'public/index.html' if lang_code == 'nl' else f'public/{lang_code}.html'
 
-with open('public/index.html', 'w') as f:
-    json_start = '<script type="application/json" id="oec-content">'
-    json_end = '</script>'
+    # Place language at top
+    for index, language in enumerate(result['languages']):
+        if language['code'] == lang_code:
+            result['languages'].insert(0, result['languages'].pop(index))
+            break
 
-    # Replace text between json_start and json_end with result
-    contents = contents[:contents.find(json_start) + len(json_start)] + \
-               json.dumps(result, indent=4) + \
-               contents[contents.find(json_end):]
-    f.write(contents)
+    with open(filename, 'r') as f:
+        contents = f.read()
+
+    with open(filename, 'w') as f:
+        json_start = '<script type="application/json" id="oec-content">'
+        json_end = '</script>'
+
+        # Replace text between json_start and json_end with result
+        contents = contents[:contents.find(json_start) + len(json_start)] + \
+                   json.dumps(result, indent=4) + \
+                   contents[contents.find(json_end):]
+        f.write(contents)

@@ -80,24 +80,6 @@ export default {
 
 .party-section__parties {
   margin-bottom: 3em;
-  &.party-section__parties--logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    margin-right: -0.5em;
-    margin-left: -0.5em;
-    .party-section__party {
-      width: 100%;
-      padding: 0 0.5em;
-      flex: none;
-      @media (min-width: 48em) {
-        width: 33.333%;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-      }
-    }
-  }
 }
 
 .party-section__actions {

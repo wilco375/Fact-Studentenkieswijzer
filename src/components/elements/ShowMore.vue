@@ -1,8 +1,8 @@
 <template>
   <div class="show-more" :aria-label="text">
-    <span>{{ short }}</span><span v-if="isTruncated">{{ more ? rest : ' ...' }}</span><!-- eslint-disable-line max-len -->
-    <a @click="toggle" v-if="isTruncated" class="show-more__toggle">
-      &nbsp;{{ $t(`elements.show-more.${more ? 'hide' : 'show'}`).replace(' ', '\xa0') }}
+    <span v-if="escapeHtml">{{ short }}</span><span v-else v-html="short"></span><span v-if="isTruncated && escapeHtml">{{ more ? rest : ' ...' }}</span><span v-if="isTruncated && !escapeHtml" v-html="more ? rest : ' ...'"></span><!-- eslint-disable-line max-len -->
+    &nbsp;<a @click="toggle" v-if="isTruncated" class="show-more__toggle">
+      {{ $t(`elements.show-more.${more ? 'hide' : 'show'}`).replace(' ', '\xa0') }}
     </a>
   </div>
 </template>
@@ -23,6 +23,10 @@ export default {
     length: {
       type: Number,
       default: 250,
+    },
+    escapeHtml: {
+      type: Boolean,
+      default: true,
     },
   },
   computed: {
@@ -52,5 +56,8 @@ export default {
 .show-more__toggle {
   font-weight: bold;
   cursor: pointer;
+}
+.show-more a {
+  text-decoration: underline;
 }
 </style>

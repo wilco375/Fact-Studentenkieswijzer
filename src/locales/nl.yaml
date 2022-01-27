@@ -151,7 +151,7 @@ views:
         match-aria: "Je overeenkomst met partij '{party}' is {percentage} %"
       section:
         heading: "Je resultaat"
-        explanation: "Deze grafiek laat zien hoeveel jij en de respectievelijke partijen het eens zijn met de bovenstaande stelling. Hoe hoger het percentage, hoe meer de standen overeen komen. Houd er rekening mee dat dit geen stemaanbeveling is, maar een hulpmiddel voor oriëntatie en discussie."
+        explanation: "Deze grafiek laat zien hoeveel jij en de respectievelijke partijen het eens zijn met de bovenstaande stelling. Hoe hoger het percentage, hoe meer de standen overeen komen. Houd er rekening mee dat dit geen stemaanbeveling is, maar een hulpmiddel ter oriëntatie. We raden je ook aan om hieronder de toelichting van partijen door te lezen en de partijprogramma's te bekijken."
     compare:
       additional-analysis:
         heading: "Statistieken"
@@ -204,12 +204,12 @@ views:
       answer:
         skip:
           status-text: "onbekend"
-          content: "De partij '{party}' heeft geen antwoord gegeven of stand ingenomen met betrekking tot deze stelling."
+          content: "Geen antwoord gegeven of stand ingenomen."
         empty:
-          content: "De partij '{party}' heeft geen toelichting gegeven om hun stand met betrekking tot deze stelling uit te leggen."
+          content: "Geen toelichting gegeven."
       section:
-        heading: "Hun antwoorden"
-        explanation: "De partijen geven meestal een toelichting bij stellingen om hun redenering uit te leggen. Het is niet altijd duidelijk voor een partij een bepaalde stand inneemt dus het is aanbevolen om de toelichting of de respectievelijke partijprogramma's door te lezen."
+        heading: "Toelichtingen"
+        explanation: "De partijen geven meestal een toelichting bij stellingen om hun redenering uit te leggen. Het is niet altijd duidelijk waarom een partij een bepaald standpunt inneemt dus het is aanbevolen om de toelichting of de partijprogramma's door te lezen."
         region-aria: "Stelling {count} van de {total}"
       friends-position:
         answer-aria: "{name}: {position}"
