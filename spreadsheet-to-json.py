@@ -284,7 +284,7 @@ result = {
                 "en": "General"
             },
             "statement": {
-                "nl": "Studenten zouden meer inspraak moeten hebben in the politiek van Enschede",
+                "nl": "Studenten zouden meer inspraak moeten hebben in de politiek van Enschede",
                 "en": "Students should be involved more in the politics of Enschede"
             },
             "positions": {}
