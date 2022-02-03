@@ -446,7 +446,7 @@ result = {
 
 df = read_ods("answers.ods", 1)
 df.sort_values(by=["Partijnaam"], inplace=True)
-for row_index in range(1, df.shape[0]):
+for row_index in range(0, df.shape[0]):
     row = df.iloc[row_index]
     party_id = row[1].lower()
     if row[2] is None or row[2].strip() == "":
