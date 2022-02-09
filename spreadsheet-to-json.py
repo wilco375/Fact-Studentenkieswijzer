@@ -501,5 +501,5 @@ for lang_code in ['nl', 'en']:
         # Replace text between json_start and json_end with result
         contents = contents[:contents.find(json_start) + len(json_start)] + \
                    json.dumps(result, indent=4) + \
-                   contents[contents.find(json_end):]
+                   contents[contents.find(json_end, contents.find(json_start)):]
         f.write(contents)
