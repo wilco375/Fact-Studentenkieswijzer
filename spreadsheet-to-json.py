@@ -273,7 +273,7 @@ result = {
         },
         "text": {
             "nl": "Deze kieswijzer is speciaal gericht op studenten en bevat stellingen die specifiek voor studenten relevant zijn. Wij raden sterk aan om ook de toelichtingen van partijen bij de stellingen te lezen en de partijprogramma's door te lezen. Ook kan je deelnemen aan het debat dat op 14 maart georganiseerd wordt. Meer informatie hierover vind je <a href=\"/debat\" target=\"_blank\">hier</a>.",
-            "en": "This election guide is aimed at students and contains theses that are specifically relevant to students. We strongly recommend that you also read the explanations of the parties to the theses and that, in addition to this election guide, you also read through party programmes (you can use Google Translate to translate them to English). If you speak Dutch, you can also take part in the debate that will be organized on the 14th of March. More information about this can be found <a href=\"/debat\" target=\"_blank\"></a>."
+            "en": "This election guide is aimed at students and contains theses that are specifically relevant to students. We strongly recommend that you also read the explanations of the parties to the theses and that, in addition to this election guide, you also read through party programmes (you can use Google Translate to translate them to English). If you speak Dutch, you can also take part in the debate that will be organized on the 14th of March. More information about this can be found <a href=\"/debat\" target=\"_blank\">here</a>."
         }
     },
     "parties": [],
