@@ -15,6 +15,13 @@
       {{ $t('title') }}
     </h1>
     <p class="start-section__subtitle">{{ $t('subtitle') }}</p>
+    <button v-if="activeLanguage.code == 'nl'" @click="activateLanguage('en')"
+            class="start-section__button">
+      Go to English version
+    </button>
+    <button v-else @click="activateLanguage('nl')" class="start-section__button">
+      Ga naar Nederlandse versie
+    </button>
   </PageSection>
 </template>
 
@@ -23,8 +30,18 @@ import PageSection from '@/components/elements/PageSection.vue';
 
 export default {
   name: 'StartSection',
+  computed: {
+    activeLanguage() {
+      return this.$store.getters['languages/active'];
+    },
+  },
   components: {
     PageSection,
+  },
+  methods: {
+    activateLanguage(code) {
+      this.$store.commit('languages/activateLanguage', { code });
+    },
   },
 };
 </script>
@@ -70,5 +87,10 @@ export default {
   @media (min-width: 64em) {
     font-size: 1.25em;
   }
+}
+
+.start-section__button {
+  display: inline-block;
+  margin-top: 30px;
 }
 </style>

@@ -3,9 +3,7 @@
     <h2 class="introduction-section__heading">
       {{ $t('introduction.heading') }}
     </h2>
-    <p class="introduction-section__text">
-      {{ $t('introduction.text') }}
-    </p>
+    <p class="introduction-section__text" v-html="$t('introduction.text')"></p>
   </PageSection>
 </template>
 
@@ -40,6 +38,9 @@ export default {
 }
 
 .introduction-section__text {
+  a {
+    text-decoration: underline !important;
+  }
   @media (min-width: 40em) {
     font-size: 1.25em;
   }
